@@ -10,6 +10,13 @@ CORS(app, origins="*")
 
 DB_PATH = os.path.join(os.path.dirname(__file__), 'database.db')
 
+
+@app.route("/")
+def home():
+    return "Backend working da 🔥"
+
+if __name__ == "__main__":
+    app.run()
 def get_db():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
